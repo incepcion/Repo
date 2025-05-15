@@ -1,3 +1,15 @@
-git add*
-git commit * -m (hola)
-git push origin main
+CREATE DATABASE Monsterbase;
+USE Monsterbase; 
+
+CREATE TABLE Proveedores (
+    ProveedorID INT PRIMARY KEY,
+    Nombre VARCHAR(69),
+    Dirección VARCHAR(100)
+);
+CREATE TABLE Productos (
+    ProductoID INT PRIMARY KEY,
+    Nombre VARCHAR(69),
+    Precio DECIMAL(10, 2),
+    ProveedorID INT,
+    FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID)
+);
